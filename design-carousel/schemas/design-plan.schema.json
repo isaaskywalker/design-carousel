@@ -1,0 +1,408 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/design-carousel/design-plan.schema.json",
+  "title": "design-plan",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "brief_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "style_profile_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "width",
+        "height"
+      ]
+    },
+    "safe_area": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "horizontal": {
+          "type": "number",
+          "minimum": 0
+        },
+        "vertical": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "slide_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "layout": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "background": {
+            "type": "string",
+            "pattern": "^#[0-9A-Fa-f]{6}$"
+          },
+          "elements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "element_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "type": {
+                  "enum": [
+                    "text",
+                    "image",
+                    "shape"
+                  ]
+                },
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "width": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "height": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "z": {
+                  "type": "integer"
+                },
+                "rotation": {
+                  "type": "number"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "typography": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "font_family": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "font_size": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "font_weight": {
+                      "type": "integer",
+                      "minimum": 100,
+                      "maximum": 900
+                    },
+                    "line_height": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "color": {
+                      "type": "string",
+                      "pattern": "^#[0-9A-Fa-f]{6}$"
+                    },
+                    "align": {
+                      "enum": [
+                        "left",
+                        "center",
+                        "right"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "font_family",
+                    "font_size",
+                    "font_weight",
+                    "line_height",
+                    "color",
+                    "align"
+                  ]
+                },
+                "fill": {
+                  "type": "string",
+                  "pattern": "^#[0-9A-Fa-f]{6}$"
+                },
+                "image": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "purpose": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "prompt": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "aspect_ratio": {
+                      "type": "string",
+                      "pattern": "^[1-9][0-9]*:[1-9][0-9]*$"
+                    },
+                    "status": {
+                      "enum": [
+                        "planned",
+                        "generated",
+                        "provided",
+                        "failed",
+                        "sourced",
+                        "pending"
+                      ]
+                    },
+                    "asset_path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "fit": {
+                      "enum": [
+                        "cover",
+                        "contain"
+                      ]
+                    },
+                    "asset_id": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "provenance": {
+                      "enum": [
+                        "user_provided",
+                        "web_sourced",
+                        "ai_generated",
+                        "reconstruction"
+                      ]
+                    },
+                    "source_page_url": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "culture_role": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "treatment": {
+                      "enum": [
+                        "as_is",
+                        "crop",
+                        "cutout",
+                        "collage",
+                        "annotate",
+                        "generate"
+                      ]
+                    },
+                    "original_asset_path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "processing_note_ko": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "purpose",
+                    "aspect_ratio",
+                    "status",
+                    "fit"
+                  ],
+                  "allOf": [
+                    {
+                      "if": {
+                        "properties": {
+                          "status": {
+                            "enum": [
+                              "generated",
+                              "provided",
+                              "sourced"
+                            ]
+                          }
+                        }
+                      },
+                      "then": {
+                        "required": [
+                          "asset_path"
+                        ]
+                      }
+                    },
+                    {
+                      "if": {
+                        "properties": {
+                          "status": {
+                            "const": "generated"
+                          }
+                        }
+                      },
+                      "then": {
+                        "required": [
+                          "prompt"
+                        ],
+                        "properties": {
+                          "provenance": {
+                            "const": "ai_generated"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "if": {
+                        "properties": {
+                          "status": {
+                            "const": "sourced"
+                          }
+                        }
+                      },
+                      "then": {
+                        "required": [
+                          "asset_id",
+                          "provenance",
+                          "source_page_url"
+                        ],
+                        "properties": {
+                          "provenance": {
+                            "const": "web_sourced"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                "clip_note": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "element_id",
+                "type",
+                "x",
+                "y",
+                "width",
+                "height",
+                "z"
+              ],
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "text"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "text",
+                      "typography"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "image"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "image"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "type": {
+                        "const": "shape"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "fill"
+                    ]
+                  }
+                }
+              ]
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "slide_id",
+          "layout",
+          "rationale",
+          "background",
+          "elements"
+        ]
+      },
+      "minItems": 1
+    },
+    "execution_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "culture_profile_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "asset_manifest_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visual_strategy_ref": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "brief_id",
+    "language",
+    "canvas",
+    "safe_area",
+    "slides",
+    "execution_notes"
+  ]
+}

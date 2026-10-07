@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "brief_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "slide_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "strategy": {
+            "enum": [
+              "contextual_news",
+              "place_showcase",
+              "food_product",
+              "reaction_culture",
+              "text_or_diagram",
+              "custom"
+            ]
+          },
+          "message_ko": {
+            "type": "string",
+            "minLength": 1
+          },
+          "culture_mode": {
+            "enum": [
+              "use",
+              "skip"
+            ]
+          },
+          "culture_reason_ko": {
+            "type": "string",
+            "minLength": 1
+          },
+          "composition_ko": {
+            "type": "string",
+            "minLength": 1
+          },
+          "copy_budget_ko": {
+            "type": "string",
+            "minLength": 1
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "asset_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "role": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "subject_ko": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "selection_reason_ko": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "search_queries": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "treatment": {
+                  "enum": [
+                    "as_is",
+                    "crop",
+                    "cutout",
+                    "collage",
+                    "annotate",
+                    "generate"
+                  ]
+                },
+                "treatment_reason_ko": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "enum": [
+                    "planned",
+                    "candidate",
+                    "ready",
+                    "failed"
+                  ]
+                },
+                "source_page_url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "original_path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "derived_path": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "verified": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "asset_id",
+                "role",
+                "subject_ko",
+                "selection_reason_ko",
+                "search_queries",
+                "treatment",
+                "treatment_reason_ko",
+                "status",
+                "source_page_url",
+                "original_path",
+                "derived_path",
+                "verified"
+              ],
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "status": {
+                        "const": "ready"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "original_path": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "verified": {
+                        "const": true
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "slide_id",
+          "strategy",
+          "message_ko",
+          "culture_mode",
+          "culture_reason_ko",
+          "composition_ko",
+          "copy_budget_ko",
+          "assets"
+        ]
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "source_notes_ref": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "brief_id",
+    "slides",
+    "assumptions"
+  ]
+}

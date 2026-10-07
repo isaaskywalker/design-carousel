@@ -1,0 +1,54 @@
+{
+  "version": "1.0",
+  "language": "ko-KR",
+  "references": [
+    {
+      "id": "user-example",
+      "source": "사용자가 설명한 두 Instagram 스크린샷",
+      "status": "partial",
+      "analyzed_items": 2,
+      "evidence_notes_ko": [
+        "인물 이름은 사용자 설명 기준",
+        "유행 여부는 검색 전 미확인",
+        "플랫폼 UI는 제작 요소에서 제외"
+      ]
+    }
+  ],
+  "asset_language": {
+    "people": [
+      "contextual_anchor",
+      "oversized_cutout"
+    ],
+    "memes": [
+      "reaction",
+      "absurd_juxtaposition"
+    ],
+    "screenshots": [
+      "evidence"
+    ],
+    "decorative_assets": [
+      "emoji",
+      "dolphin",
+      "sticker"
+    ]
+  },
+  "collage_behavior": {
+    "overlap": "high",
+    "alignment": "asymmetric",
+    "intentional_chaos": "controlled"
+  },
+  "rules": [
+    {
+      "observation_ko": "큰 인물 앞에 흰 댓글 캡처가 비대칭으로 배치됨",
+      "rule_ko": "맥락 인물과 읽을 수 있는 원본 댓글을 함께 사용하고 중복 본문을 삭제",
+      "evidence_ids": [
+        "user-example"
+      ],
+      "confidence": 0.85,
+      "generation_keywords": [
+        "contextual portrait",
+        "comment collage"
+      ]
+    }
+  ]
+}

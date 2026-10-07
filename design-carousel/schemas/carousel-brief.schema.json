@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/design-carousel/carousel-brief.schema.json",
+  "title": "carousel-brief",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "brief_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slide_count": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30
+    },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "width",
+        "height"
+      ]
+    },
+    "safe_area": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "horizontal": {
+          "type": "number",
+          "minimum": 0
+        },
+        "vertical": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "style_profile_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required_elements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "required_elements",
+        "constraints"
+      ]
+    },
+    "target_figma": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": [
+        "plan_only",
+        "execute"
+      ]
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "brief_id",
+    "topic",
+    "audience",
+    "goal",
+    "language",
+    "slide_count",
+    "canvas",
+    "safe_area",
+    "references",
+    "brand",
+    "mode",
+    "assumptions"
+  ]
+}

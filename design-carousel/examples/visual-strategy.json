@@ -1,0 +1,148 @@
+{
+  "brief_id": "topic-routing-examples",
+  "slides": [
+    {
+      "slide_id": "debate",
+      "strategy": "contextual_news",
+      "message_ko": "국제대회 금메달과 군 복무 특례의 타당성",
+      "culture_mode": "use",
+      "culture_reason_ko": "실제 관련 인물·반응이 쟁점 이해에 기여할 때",
+      "composition_ko": "검증된 관련 인물/경기 사진 + 쟁점 제목. 필요하면 수위를 검토한 실제 댓글.",
+      "copy_budget_ko": "이미지/정보 공간에 맞춰 제목과 최소 본문",
+      "assets": [
+        {
+          "asset_id": "subject",
+          "role": "contextual_anchor",
+          "subject_ko": "사용자가 언급한 인물: 사건 관련성·신원 확인 전 미확정",
+          "selection_reason_ko": "슬라이드 메시지와 실제 대상 정확성 우선",
+          "search_queries": [
+            "사용자가 언급한 인물: 사건 관련성·신원 확인 전 미확정"
+          ],
+          "treatment": "crop",
+          "treatment_reason_ko": "원본 후보 확인 후 구도에 맞게 재평가",
+          "status": "planned",
+          "source_page_url": null,
+          "original_path": null,
+          "derived_path": null,
+          "verified": false
+        },
+        {
+          "asset_id": "reaction",
+          "role": "optional_evidence",
+          "subject_ko": "원문 맥락과 표현 수위를 확인한 실제 반응: 없어도 진행 가능",
+          "selection_reason_ko": "슬라이드 메시지와 실제 대상 정확성 우선",
+          "search_queries": [
+            "원문 맥락과 표현 수위를 확인한 실제 반응: 없어도 진행 가능"
+          ],
+          "treatment": "as_is",
+          "treatment_reason_ko": "원본 후보 확인 후 구도에 맞게 재평가",
+          "status": "planned",
+          "source_page_url": null,
+          "original_path": null,
+          "derived_path": null,
+          "verified": false
+        }
+      ]
+    },
+    {
+      "slide_id": "cafe",
+      "strategy": "place_showcase",
+      "message_ko": "카페의 공간과 대표 디저트를 소개",
+      "culture_mode": "skip",
+      "culture_reason_ko": "공간과 메뉴가 중심이며 문화 인지 장치가 필요하지 않음",
+      "composition_ko": "같은 지점 건물/내부를 큰 배경, 실제 디저트 사진 두 개를 보조로 검토. 후보와 공간에 따라 수량 변경.",
+      "copy_budget_ko": "이미지/정보 공간에 맞춰 제목과 최소 본문",
+      "assets": [
+        {
+          "asset_id": "building",
+          "role": "spatial_anchor",
+          "subject_ko": "해당 카페 실제 건물 또는 내부",
+          "selection_reason_ko": "슬라이드 메시지와 실제 대상 정확성 우선",
+          "search_queries": [
+            "해당 카페 실제 건물 또는 내부"
+          ],
+          "treatment": "as_is",
+          "treatment_reason_ko": "원본 후보 확인 후 구도에 맞게 재평가",
+          "status": "planned",
+          "source_page_url": null,
+          "original_path": null,
+          "derived_path": null,
+          "verified": false
+        },
+        {
+          "asset_id": "dessert-1",
+          "role": "detail",
+          "subject_ko": "해당 카페 실제 디저트 1",
+          "selection_reason_ko": "슬라이드 메시지와 실제 대상 정확성 우선",
+          "search_queries": [
+            "해당 카페 실제 디저트 1"
+          ],
+          "treatment": "crop",
+          "treatment_reason_ko": "원본 후보 확인 후 구도에 맞게 재평가",
+          "status": "planned",
+          "source_page_url": null,
+          "original_path": null,
+          "derived_path": null,
+          "verified": false
+        },
+        {
+          "asset_id": "dessert-2",
+          "role": "detail",
+          "subject_ko": "해당 카페 실제 디저트 2",
+          "selection_reason_ko": "슬라이드 메시지와 실제 대상 정확성 우선",
+          "search_queries": [
+            "해당 카페 실제 디저트 2"
+          ],
+          "treatment": "cutout",
+          "treatment_reason_ko": "원본 후보 확인 후 구도에 맞게 재평가",
+          "status": "planned",
+          "source_page_url": null,
+          "original_path": null,
+          "derived_path": null,
+          "verified": false
+        }
+      ]
+    },
+    {
+      "slide_id": "product",
+      "strategy": "food_product",
+      "message_ko": "제품의 사용성과 디테일 소개",
+      "culture_mode": "skip",
+      "culture_reason_ko": "제품과 사용 장면으로 충분함",
+      "composition_ko": "제품 히어로 + 사용 장면, 정보 공간에 맞춰 조정.",
+      "copy_budget_ko": "이미지/정보 공간에 맞춰 제목과 최소 본문",
+      "assets": [
+        {
+          "asset_id": "product-main",
+          "role": "hero",
+          "subject_ko": "실제 제품 원본",
+          "selection_reason_ko": "슬라이드 메시지와 실제 대상 정확성 우선",
+          "search_queries": [
+            "실제 제품 원본"
+          ],
+          "treatment": "as_is",
+          "treatment_reason_ko": "원본 후보 확인 후 구도에 맞게 재평가",
+          "status": "planned",
+          "source_page_url": null,
+          "original_path": null,
+          "derived_path": null,
+          "verified": false
+        }
+      ]
+    },
+    {
+      "slide_id": "concept",
+      "strategy": "text_or_diagram",
+      "message_ko": "두 개념의 차이를 설명",
+      "culture_mode": "skip",
+      "culture_reason_ko": "비교 도식이 사진보다 정확함",
+      "composition_ko": "짧은 제목 + 비교 도식. 장식 사진 불필요.",
+      "copy_budget_ko": "이미지/정보 공간에 맞춰 제목과 최소 본문",
+      "assets": []
+    }
+  ],
+  "assumptions": [
+    "독립적인 네 주제 예시이며 하나의 완성 캐러셀이 아님",
+    "실제 인물 논란·제도·원본 이미지는 검색/확인하지 않은 계획 예시"
+  ]
+}

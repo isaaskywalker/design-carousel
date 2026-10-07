@@ -1,0 +1,381 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "recency_mode": {
+      "enum": [
+        "latest",
+        "timeless",
+        "balanced"
+      ]
+    },
+    "search_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "enum": [
+              "not_attempted",
+              "success",
+              "partial",
+              "blocked",
+              "unavailable"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "attempted_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "opened_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "inspected_asset_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "limitation_ko": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "query",
+          "attempted_at",
+          "opened_urls",
+          "inspected_asset_ids",
+          "limitation_ko"
+        ]
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "real_person_photo",
+              "meme",
+              "social_screenshot",
+              "emoji",
+              "animal",
+              "sticker",
+              "other"
+            ]
+          },
+          "provenance": {
+            "enum": [
+              "user_provided",
+              "web_sourced",
+              "ai_generated",
+              "reconstruction"
+            ]
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "candidate",
+              "reference_only",
+              "ready",
+              "failed"
+            ]
+          },
+          "source_page_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "original_media_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "local_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "creator": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "accessed_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "published_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "event_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "context_ko": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rights_status": {
+            "enum": [
+              "unknown",
+              "user_confirmed",
+              "licensed",
+              "permission_granted",
+              "restricted"
+            ]
+          },
+          "rights_basis": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "usage_note_ko": {
+            "type": "string",
+            "minLength": 1
+          },
+          "generation_note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "scores": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "relevance": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "recognizability": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "recency": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "composition_fit": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              },
+              "source_confidence": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "relevance",
+              "recognizability",
+              "recency",
+              "composition_fit",
+              "source_confidence"
+            ]
+          },
+          "score_reasons_ko": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "relevance": {
+                "type": "string",
+                "minLength": 1
+              },
+              "recognizability": {
+                "type": "string",
+                "minLength": 1
+              },
+              "recency": {
+                "type": "string",
+                "minLength": 1
+              },
+              "composition_fit": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_confidence": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "relevance",
+              "recognizability",
+              "recency",
+              "composition_fit",
+              "source_confidence"
+            ]
+          },
+          "weighted_total": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "decision": {
+            "enum": [
+              "select",
+              "reject",
+              "pending"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "provenance",
+          "subject",
+          "role",
+          "status",
+          "source_page_url",
+          "original_media_url",
+          "local_path",
+          "creator",
+          "accessed_at",
+          "published_at",
+          "event_at",
+          "context_ko",
+          "rights_status",
+          "rights_basis",
+          "usage_note_ko",
+          "generation_note",
+          "scores",
+          "score_reasons_ko",
+          "weighted_total",
+          "decision"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "ready"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "local_path": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "provenance": {
+                  "const": "web_sourced"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "source_page_url": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "provenance": {
+                  "enum": [
+                    "ai_generated",
+                    "reconstruction"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "generation_note": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "recency_mode",
+    "search_log",
+    "assets"
+  ]
+}

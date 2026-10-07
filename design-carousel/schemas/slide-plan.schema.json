@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/design-carousel/slide-plan.schema.json",
+  "title": "slide-plan",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "brief_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "slide_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "headline": {
+            "type": "string",
+            "minLength": 1
+          },
+          "body": {
+            "type": "string"
+          },
+          "cta": {
+            "type": "string"
+          },
+          "claims": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "status": {
+                  "enum": [
+                    "verified",
+                    "unchecked"
+                  ]
+                },
+                "source": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "text",
+                "status"
+              ]
+            }
+          }
+        },
+        "required": [
+          "slide_id",
+          "purpose",
+          "headline",
+          "body",
+          "claims"
+        ]
+      },
+      "minItems": 1
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "brief_id",
+    "language",
+    "slides",
+    "assumptions"
+  ]
+}

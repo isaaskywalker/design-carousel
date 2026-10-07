@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Visual Reference",
+  "type": "object",
+  "required": [
+    "id",
+    "source",
+    "label"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "source": {
+      "enum": [
+        "instagram",
+        "pinterest",
+        "image",
+        "screenshot",
+        "folder",
+        "other"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "dimensions": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "typography",
+          "layout",
+          "color",
+          "imagery",
+          "motif",
+          "hierarchy",
+          "copy",
+          "sequencing"
+        ]
+      }
+    },
+    "source_status": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial",
+        "blocked"
+      ]
+    },
+    "discovered_items": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "analyzed_items": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "access_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "user_facing_language": {
+      "type": "string",
+      "default": "ko-KR"
+    }
+  }
+}

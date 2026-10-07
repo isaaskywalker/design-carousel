@@ -1,0 +1,160 @@
+{
+  "version": "1.0",
+  "recency_mode": "latest",
+  "search_log": [
+    {
+      "status": "not_attempted",
+      "query": null,
+      "attempted_at": null,
+      "opened_urls": [],
+      "inspected_asset_ids": [],
+      "limitation_ko": "패키지 예시에는 실제 최신 검색 결과를 포함하지 않음"
+    }
+  ],
+  "assets": [
+    {
+      "id": "person-context",
+      "kind": "real_person_photo",
+      "provenance": "user_provided",
+      "subject": "스윙스: 사용자 설명 기반 예시",
+      "role": "contextual_anchor",
+      "status": "candidate",
+      "source_page_url": null,
+      "original_media_url": null,
+      "local_path": null,
+      "creator": null,
+      "accessed_at": null,
+      "published_at": null,
+      "event_at": null,
+      "context_ko": "구조 설명용 계획이며 새 원본 자산을 확보하지 않음",
+      "rights_status": "unknown",
+      "rights_basis": null,
+      "usage_note_ko": "실제 원본 준비 전 Figma에 배치하지 않음",
+      "generation_note": null,
+      "scores": {
+        "relevance": null,
+        "recognizability": null,
+        "recency": null,
+        "composition_fit": null,
+        "source_confidence": null
+      },
+      "score_reasons_ko": {
+        "relevance": "실제 후보 확보 후 평가",
+        "recognizability": "실제 후보 확보 후 평가",
+        "recency": "실제 후보 확보 후 평가",
+        "composition_fit": "실제 후보 확보 후 평가",
+        "source_confidence": "실제 후보 확보 후 평가"
+      },
+      "weighted_total": null,
+      "decision": "pending"
+    },
+    {
+      "id": "comment-1",
+      "kind": "social_screenshot",
+      "provenance": "user_provided",
+      "subject": "해당 게시물의 실제 댓글 원본 확보 필요",
+      "role": "evidence",
+      "status": "candidate",
+      "source_page_url": null,
+      "original_media_url": null,
+      "local_path": null,
+      "creator": null,
+      "accessed_at": null,
+      "published_at": null,
+      "event_at": null,
+      "context_ko": "구조 설명용 계획이며 새 원본 자산을 확보하지 않음",
+      "rights_status": "unknown",
+      "rights_basis": null,
+      "usage_note_ko": "실제 원본 준비 전 Figma에 배치하지 않음",
+      "generation_note": null,
+      "scores": {
+        "relevance": null,
+        "recognizability": null,
+        "recency": null,
+        "composition_fit": null,
+        "source_confidence": null
+      },
+      "score_reasons_ko": {
+        "relevance": "실제 후보 확보 후 평가",
+        "recognizability": "실제 후보 확보 후 평가",
+        "recency": "실제 후보 확보 후 평가",
+        "composition_fit": "실제 후보 확보 후 평가",
+        "source_confidence": "실제 후보 확보 후 평가"
+      },
+      "weighted_total": null,
+      "decision": "pending"
+    },
+    {
+      "id": "idol-context",
+      "kind": "real_person_photo",
+      "provenance": "user_provided",
+      "subject": "원희: 사용자 설명 기반, 현재성 확인 필요",
+      "role": "contextual_anchor",
+      "status": "candidate",
+      "source_page_url": null,
+      "original_media_url": null,
+      "local_path": null,
+      "creator": null,
+      "accessed_at": null,
+      "published_at": null,
+      "event_at": null,
+      "context_ko": "구조 설명용 계획이며 새 원본 자산을 확보하지 않음",
+      "rights_status": "unknown",
+      "rights_basis": null,
+      "usage_note_ko": "실제 원본 준비 전 Figma에 배치하지 않음",
+      "generation_note": null,
+      "scores": {
+        "relevance": null,
+        "recognizability": null,
+        "recency": null,
+        "composition_fit": null,
+        "source_confidence": null
+      },
+      "score_reasons_ko": {
+        "relevance": "실제 후보 확보 후 평가",
+        "recognizability": "실제 후보 확보 후 평가",
+        "recency": "실제 후보 확보 후 평가",
+        "composition_fit": "실제 후보 확보 후 평가",
+        "source_confidence": "실제 후보 확보 후 평가"
+      },
+      "weighted_total": null,
+      "decision": "pending"
+    },
+    {
+      "id": "dolphin",
+      "kind": "animal",
+      "provenance": "user_provided",
+      "subject": "돌고래 장식 원본/생성 여부 결정 필요",
+      "role": "absurdity",
+      "status": "candidate",
+      "source_page_url": null,
+      "original_media_url": null,
+      "local_path": null,
+      "creator": null,
+      "accessed_at": null,
+      "published_at": null,
+      "event_at": null,
+      "context_ko": "구조 설명용 계획이며 새 원본 자산을 확보하지 않음",
+      "rights_status": "unknown",
+      "rights_basis": null,
+      "usage_note_ko": "실제 원본 준비 전 Figma에 배치하지 않음",
+      "generation_note": null,
+      "scores": {
+        "relevance": null,
+        "recognizability": null,
+        "recency": null,
+        "composition_fit": null,
+        "source_confidence": null
+      },
+      "score_reasons_ko": {
+        "relevance": "실제 후보 확보 후 평가",
+        "recognizability": "실제 후보 확보 후 평가",
+        "recency": "실제 후보 확보 후 평가",
+        "composition_fit": "실제 후보 확보 후 평가",
+        "source_confidence": "실제 후보 확보 후 평가"
+      },
+      "weighted_total": null,
+      "decision": "pending"
+    }
+  ]
+}

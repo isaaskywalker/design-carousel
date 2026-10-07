@@ -1,0 +1,124 @@
+{
+  "brief_id": "type-tips",
+  "language": "ko",
+  "canvas": {
+    "width": 1080,
+    "height": 1350
+  },
+  "safe_area": {
+    "horizontal": 72,
+    "vertical": 72
+  },
+  "slides": [
+    {
+      "slide_id": "s1",
+      "layout": "oversized_typography",
+      "rationale": "큰 제목과 넓은 여백으로 메시지 위계를 만든다. 임시 방향이며 레퍼런스 분석 결과가 아니다.",
+      "background": "#F3EFE5",
+      "elements": [
+        {
+          "element_id": "s1-text-0",
+          "type": "text",
+          "x": 72,
+          "y": 180,
+          "width": 936,
+          "height": 260,
+          "z": 0,
+          "text": "읽히는 디자인의 시작",
+          "typography": {
+            "font_family": "Noto Sans KR",
+            "font_size": 88,
+            "font_weight": 700,
+            "line_height": 123.19999999999999,
+            "color": "#181818",
+            "align": "left"
+          }
+        },
+        {
+          "element_id": "s1-text-1",
+          "type": "text",
+          "x": 72,
+          "y": 540,
+          "width": 936,
+          "height": 280,
+          "z": 1,
+          "text": "크기와 여백으로 중요한 메시지를 먼저 보여주세요.",
+          "typography": {
+            "font_family": "Noto Sans KR",
+            "font_size": 40,
+            "font_weight": 400,
+            "line_height": 56.0,
+            "color": "#181818",
+            "align": "left"
+          }
+        }
+      ]
+    },
+    {
+      "slide_id": "s2",
+      "layout": "text_stack",
+      "rationale": "큰 제목과 넓은 여백으로 메시지 위계를 만든다. 임시 방향이며 레퍼런스 분석 결과가 아니다.",
+      "background": "#F3EFE5",
+      "elements": [
+        {
+          "element_id": "s2-text-0",
+          "type": "text",
+          "x": 72,
+          "y": 180,
+          "width": 936,
+          "height": 260,
+          "z": 0,
+          "text": "위계를 먼저 정해보세요",
+          "typography": {
+            "font_family": "Noto Sans KR",
+            "font_size": 88,
+            "font_weight": 700,
+            "line_height": 123.19999999999999,
+            "color": "#181818",
+            "align": "left"
+          }
+        },
+        {
+          "element_id": "s2-text-1",
+          "type": "text",
+          "x": 72,
+          "y": 540,
+          "width": 936,
+          "height": 280,
+          "z": 1,
+          "text": "제목은 크게, 설명은 짧게. 중요한 문장 주변에 여백을 두세요.",
+          "typography": {
+            "font_family": "Noto Sans KR",
+            "font_size": 40,
+            "font_weight": 400,
+            "line_height": 56.0,
+            "color": "#181818",
+            "align": "left"
+          }
+        },
+        {
+          "element_id": "s2-text-2",
+          "type": "text",
+          "x": 72,
+          "y": 1110,
+          "width": 936,
+          "height": 96,
+          "z": 2,
+          "text": "다음 작업에 쓰도록 저장하세요.",
+          "typography": {
+            "font_family": "Noto Sans KR",
+            "font_size": 30,
+            "font_weight": 400,
+            "line_height": 42.0,
+            "color": "#181818",
+            "align": "left"
+          }
+        }
+      ]
+    }
+  ],
+  "execution_notes": [
+    "실행 전 한국어 폰트 가용성과 실제 텍스트 넘침 확인.",
+    "예제는 계획이며 생성 이미지 또는 Figma 결과를 포함하지 않는다."
+  ]
+}

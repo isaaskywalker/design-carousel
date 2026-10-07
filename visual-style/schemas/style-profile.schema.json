@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Visual Style Profile",
+  "type": "object",
+  "required": [
+    "name",
+    "language",
+    "visual_dna",
+    "rules",
+    "avoid",
+    "reference_weights"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "default": "1.0"
+    },
+    "visual_dna": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+      }
+    },
+    "reference_weights": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "inferred_rule",
+          "applies_to",
+          "confidence"
+        ],
+        "properties": {
+          "observed": {
+            "type": "string"
+          },
+          "inferred_rule": {
+            "type": "string"
+          },
+          "applies_to": {
+            "enum": [
+              "typography",
+              "layout",
+              "color",
+              "imagery",
+              "motif",
+              "hierarchy",
+              "copy",
+              "sequencing"
+            ]
+          },
+          "strictness": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "evidence_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "generation_keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "avoid": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "language": {
+      "type": "object",
+      "required": [
+        "user_facing_language",
+        "analysis_language",
+        "generation_keyword_language"
+      ],
+      "properties": {
+        "user_facing_language": {
+          "type": "string",
+          "default": "ko-KR"
+        },
+        "analysis_language": {
+          "type": "string",
+          "default": "ko-KR"
+        },
+        "generation_keyword_language": {
+          "type": "string",
+          "default": "en-US"
+        }
+      }
+    },
+    "generation_keywords": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

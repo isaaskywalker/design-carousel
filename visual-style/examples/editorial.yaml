@@ -1,0 +1,68 @@
+name: dori-editorial
+version: "1.1"
+language:
+  user_facing_language: ko-KR
+  analysis_language: ko-KR
+  generation_keyword_language: en-US
+visual_dna:
+  editorial: 90
+  playful: 55
+  minimal: 80
+  retro: 25
+  tech: 70
+  human: 85
+  experimental: 50
+reference_weights:
+  ref_a:
+    typography: 0.6
+    layout: 0.2
+    imagery: 0.2
+  ref_b:
+    typography: 0.1
+    layout: 0.6
+    imagery: 0.3
+rules:
+  - observed: "12개 중 8개가 하나의 큰 좌측 정렬 제목을 사용한다"
+    inferred_rule: "슬라이드마다 하나의 주 제목을 좌측 정렬하고, 제목 영역은 슬라이드 폭의 약 25~40%를 사용한다"
+    applies_to: typography
+    strictness: 0.9
+    confidence: high
+    evidence_count: 8
+    source_ids: [ref_a]
+    generation_keywords:
+      - "single oversized left-aligned headline"
+      - "tight editorial typography"
+  - observed: "12개 중 7개가 하나의 주요 오브젝트 주변에 넓은 여백을 둔다"
+    inferred_rule: "하나의 주 시각 요소만 두고 주변에 넓은 여백을 유지한다"
+    applies_to: layout
+    strictness: 0.8
+    confidence: high
+    evidence_count: 7
+    source_ids: [ref_a, ref_b]
+    generation_keywords:
+      - "strong negative space"
+      - "single focal object"
+  - observed: "이미지 중심 슬라이드는 클로즈업 또는 컷아웃 피사체를 자주 사용한다"
+    inferred_rule: "와이드한 스톡 사진보다 클로즈업 또는 분리된 컷아웃 피사체를 우선한다"
+    applies_to: imagery
+    strictness: 0.75
+    confidence: medium
+    evidence_count: 6
+    source_ids: [ref_b]
+    generation_keywords:
+      - "close crop"
+      - "isolated cutout subject"
+  - observed: "보조 문구는 대부분 2줄을 넘지 않는다"
+    inferred_rule: "보조 문구는 보통 1~2개의 짧은 줄로 유지한다"
+    applies_to: copy
+    strictness: 0.85
+    confidence: high
+    evidence_count: 9
+    source_ids: [ref_a]
+avoid:
+  - "가운데 정렬 중심의 전형적인 기업 발표자료 레이아웃"
+  - "일반적인 기업 스톡 사진"
+  - "그라데이션이 과한 AI 비주얼"
+  - "긴 문단형 본문"
+notes:
+  - "예시 프로필이므로 실제 레퍼런스 분석 결과로 교체해야 한다."

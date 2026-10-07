@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "language": {
+      "const": "ko-KR"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "complete",
+              "partial",
+              "blocked"
+            ]
+          },
+          "analyzed_items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "evidence_notes_ko": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "status",
+          "analyzed_items",
+          "evidence_notes_ko"
+        ]
+      }
+    },
+    "asset_language": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "people": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "memes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "screenshots": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "decorative_assets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "people",
+        "memes",
+        "screenshots",
+        "decorative_assets"
+      ]
+    },
+    "collage_behavior": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "overlap": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alignment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "intentional_chaos": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "overlap",
+        "alignment",
+        "intentional_chaos"
+      ]
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "observation_ko": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rule_ko": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "generation_keywords": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "observation_ko",
+          "rule_ko",
+          "evidence_ids",
+          "confidence",
+          "generation_keywords"
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "language",
+    "references",
+    "asset_language",
+    "collage_behavior",
+    "rules"
+  ]
+}
