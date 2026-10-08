@@ -112,6 +112,3 @@ ZIP을 풀어 `design-carousel/`, `visual-style/`, `visual-culture/` 세 폴더�
 
 ## 주제 우선 디렉팅으로 개선
 댓글·밈·유명인·누끼는 필수 레시피가 아닙니다. 주제와 각 장의 메시지에서 이미지 역할을 먼저 결정하고 실제 후보를 본 뒤 처리와 구성을 선택합니다. 일반 이미지에는 문화적 인지도 점수를 강제하지 않습니다.
-### 탐색과 편집
-Google 등의 검색 결과에서 발견해도 기사/Instagram 원본으로 이동해 실제 이미지와 맥락을 확인한다. 원본 사용·크롭·누끼·콜라주를 자율 선택하고 편집 도구가 없으면 미처리 계획으로 남긴다. 실제 확보하지 않은 기사 이미지나 사진 경로를 만들지 않는다.
-[전략 모듈](design-carousel/agents/visual-strategy-director.md), [이미지 탐색·처리 규칙](design-carousel/references/topic-aware-image-direction.md), [네 주제 전략 예시](design-carousel/examples/visual-strategy.json)를 함께 제공한다. 이 예시는 현재 사건이나 사진 확보를 주장하지 않는다.
